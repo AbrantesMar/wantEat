@@ -21,7 +21,34 @@ class PlacesFinderViewController: UIViewController {
     }
     
     @IBAction func findCity(_ sender: Any) {
-        print("")
+        tfCity.resignFirstResponder()
+        let address = tfCity.text!
+        load(show: true)
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { [weak self] (placeMarks, error) in
+            guard let self = self else {
+                return
+            }
+            self.load(show: false)
+            self.handlerPlacemark(placeMarks: placeMarks)
+        }
+    }
+    
+    func handlerPlacemark(placeMarks: [CLPlacemark]?) {
+        guard let placeMark = placeMarks?.first else {
+            return
+        }
+        print(Place.getFormattedAddress(with: placeMark))
+    }
+    
+    func load(show: Bool) {
+        viLoading.isHidden = !show
+        guard show else {
+            aiLoading.stopAnimating()
+            return
+        }
+        
+        aiLoading.startAnimating()
     }
     
     @IBAction func close(_ sender: Any) {

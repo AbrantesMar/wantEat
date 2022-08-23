@@ -20,6 +20,7 @@
 		AC3C78D528B2C192007876E5 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C78D428B2C192007876E5 /* PlacesTableViewController.swift */; };
 		AC3C78D728B2C29B007876E5 /* PlacesFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */; };
 		AC3C78D928B31B96007876E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C78D828B31B96007876E5 /* MapViewController.swift */; };
+		ACB39B6728B4851C00B9D8E0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB39B6628B4851C00B9D8E0 /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		AC3C78D428B2C192007876E5 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFinderViewController.swift; sourceTree = "<group>"; };
 		AC3C78D828B31B96007876E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		ACB39B6628B4851C00B9D8E0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		AC3C78DB28B31BAB007876E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ACB39B6628B4851C00B9D8E0 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				AC3C78AC28B2BCCF007876E5 /* wantEat.xcdatamodeld in Sources */,
 				AC3C78A628B2BCCF007876E5 /* ViewController.swift in Sources */,
 				AC3C78A228B2BCCF007876E5 /* AppDelegate.swift in Sources */,
+				ACB39B6728B4851C00B9D8E0 /* Place.swift in Sources */,
 				AC3C78A428B2BCCF007876E5 /* SceneDelegate.swift in Sources */,
 				AC3C78D728B2C29B007876E5 /* PlacesFinderViewController.swift in Sources */,
 				AC3C78D528B2C192007876E5 /* PlacesTableViewController.swift in Sources */,
