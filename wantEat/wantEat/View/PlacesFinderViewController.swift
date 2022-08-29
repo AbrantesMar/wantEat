@@ -24,7 +24,40 @@ class PlacesFinderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(getLocation(_:)))
+        gesture.minimumPressDuration = 2.0
+        mapView.addGestureRecognizer(gesture)
 
+    }
+    
+    @objc func getLocation(_ gesture: UILongPressGestureRecognizer) {
+        guard gesture.state != .began else {
+            return
+        }
+        load(show: true)
+        let point = gesture.location(in: mapView)
+        let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { [weak self] (placeMarks, error) in
+            guard let self = self else {
+                return
+            }
+            self.handlerLocation(placeMarks: placeMarks, error: error)
+        })
+    }
+    
+    func handlerLocation(placeMarks: [CLPlacemark]?, error: Error?) {
+        self.load(show: false)
+        if error != nil {
+            self.showMessage(type: .error("Error desconhecido"))
+            return
+        }
+        
+        guard self.savePlace(with: placeMarks?.first) else {
+            self.showMessage(type: .error("Não foi encontrado nenhum local com esse nome"))
+            return
+        }
+        self.handlerPlacemark(placeMarks: placeMarks)
     }
     
     @IBAction func findCity(_ sender: Any) {
@@ -36,20 +69,7 @@ class PlacesFinderViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            //testando commit revert
-            guard true else {
-                return
-            }
-            self.load(show: false)
-            if let error = error {
-                self.showMessage(type: .error("Error desconhecido"))
-            }
-            
-            guard self.savePlace(with: placeMarks?.first) else {
-                self.showMessage(type: .error("Não foi encontrado nenhum local com esse nome"))
-                return
-            }
-            self.handlerPlacemark(placeMarks: placeMarks)
+            self.handlerLocation(placeMarks: placeMarks, error: error)
         }
     }
     
