@@ -143,10 +143,6 @@
 		AC3C78DA28B31BA4007876E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AC3C78A528B2BCCF007876E5 /* ViewController.swift */,
-				AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */,
-				AC3C78D428B2C192007876E5 /* PlacesTableViewController.swift */,
-				AC3C78D828B31B96007876E5 /* MapViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +158,10 @@
 		AC3C78DC28B31BB0007876E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AC3C78A528B2BCCF007876E5 /* ViewController.swift */,
+				AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */,
+				AC3C78D428B2C192007876E5 /* PlacesTableViewController.swift */,
+				AC3C78D828B31B96007876E5 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

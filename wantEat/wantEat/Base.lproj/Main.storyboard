@@ -49,7 +49,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="FgF-AH-ak7"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5eQ-Ln-FU0">
                             <connections>
-                                <segue destination="j6g-QD-dXT" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="1li-mX-bCy"/>
+                                <segue destination="j6g-QD-dXT" kind="presentation" identifier="finderSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="1li-mX-bCy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

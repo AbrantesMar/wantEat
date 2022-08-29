@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Place {
+struct Place: Codable {
     let name: String
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees
@@ -44,5 +44,11 @@ struct Place {
         }
         
         return address
+    }
+}
+
+extension Place: Equatable {
+    static func ==(left: Place, right: Place) -> Bool {
+        return left.latitude == right.latitude && left.longitude == right.longitude
     }
 }

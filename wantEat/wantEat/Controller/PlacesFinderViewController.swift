@@ -8,6 +8,10 @@
 import UIKit
 import MapKit
 
+protocol PlaceFinderDelegate: class {
+    func addPlace(_ place: Place)
+}
+
 class PlacesFinderViewController: UIViewController {
 
     enum PlaceFinderMessageType {
@@ -21,6 +25,7 @@ class PlacesFinderViewController: UIViewController {
     @IBOutlet weak var viLoading: UIView!
     
     var place: Place!
+    weak var delegate: PlaceFinderDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +43,11 @@ class PlacesFinderViewController: UIViewController {
         let point = gesture.location(in: mapView)
         let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { [weak self] (placeMarks, error) in
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { [weak self] (placemake, error) in
             guard let self = self else {
                 return
             }
-            self.handlerLocation(placeMarks: placeMarks, error: error)
+            self.handlerLocation(placeMarks: placemake, error: error)
         })
     }
     
@@ -104,8 +109,10 @@ class PlacesFinderViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         if hasConfirmation {
-            let confirmationAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-                print("Ok")
+            let confirmationAction = UIAlertAction(title: "Ok", style: .default, handler: { [weak self] (action) in
+                guard let self = self else { return }
+                self.delegate?.addPlace(self.place)
+                self.dismiss(animated: true, completion: nil)
             })
             alert.addAction(confirmationAction)
         }
