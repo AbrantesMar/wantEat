@@ -21,6 +21,7 @@
 		AC3C78D728B2C29B007876E5 /* PlacesFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */; };
 		AC3C78D928B31B96007876E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3C78D828B31B96007876E5 /* MapViewController.swift */; };
 		ACB39B6728B4851C00B9D8E0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB39B6628B4851C00B9D8E0 /* Place.swift */; };
+		ACDFF82F28BDA54B005C05F0 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDFF82E28BDA54B005C05F0 /* PlaceAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		AC3C78D628B2C29B007876E5 /* PlacesFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFinderViewController.swift; sourceTree = "<group>"; };
 		AC3C78D828B31B96007876E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ACB39B6628B4851C00B9D8E0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		ACDFF82E28BDA54B005C05F0 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB39B6628B4851C00B9D8E0 /* Place.swift */,
+				ACDFF82E28BDA54B005C05F0 /* PlaceAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3C78AC28B2BCCF007876E5 /* wantEat.xcdatamodeld in Sources */,
+				ACDFF82F28BDA54B005C05F0 /* PlaceAnnotation.swift in Sources */,
 				AC3C78A628B2BCCF007876E5 /* ViewController.swift in Sources */,
 				AC3C78A228B2BCCF007876E5 /* AppDelegate.swift in Sources */,
 				ACB39B6728B4851C00B9D8E0 /* Place.swift in Sources */,
