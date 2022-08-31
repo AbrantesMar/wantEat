@@ -189,7 +189,9 @@ por 2 segundos</string>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aln-Bs-Vfk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" name="main"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="main"/>
+                                <gestureRecognizers/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="KTM-ct-s5P">
                                 <rect key="frame" x="10" y="150" width="394" height="702"/>
@@ -199,10 +201,13 @@ por 2 segundos</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="iFS-Op-oGb"/>
                                         </constraints>
-                                        <color key="barTintColor" name="main"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="THJ-EV-LYq" id="Tpa-IF-zH6"/>
+                                        </connections>
                                     </searchBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="06T-Zi-1jq">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="06T-Zi-1jq">
                                         <rect key="frame" x="0.0" y="50" width="394" height="486"/>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vj7-E8-Hak">
@@ -247,12 +252,21 @@ por 2 segundos</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="main"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n89-cb-ZTW">
+                                <rect key="frame" x="189" y="430" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IcC-T5-erp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="main"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Aln-Bs-Vfk" firstAttribute="top" secondItem="PNp-N3-ehi" secondAttribute="top" id="3Ch-oe-5q2"/>
+                            <constraint firstItem="n89-cb-ZTW" firstAttribute="centerY" secondItem="06T-Zi-1jq" secondAttribute="centerY" id="7J7-zh-Q6t"/>
                             <constraint firstAttribute="trailing" secondItem="Aln-Bs-Vfk" secondAttribute="trailing" id="AKy-oc-J8c"/>
                             <constraint firstItem="KTM-ct-s5P" firstAttribute="top" secondItem="IcC-T5-erp" secondAttribute="top" constant="10" id="IbA-M2-zsB"/>
                             <constraint firstItem="IcC-T5-erp" firstAttribute="trailing" secondItem="Aln-Bs-Vfk" secondAttribute="trailing" id="Opw-h7-75q"/>
@@ -262,6 +276,7 @@ por 2 segundos</string>
                             <constraint firstItem="IcC-T5-erp" firstAttribute="bottom" secondItem="KTM-ct-s5P" secondAttribute="bottom" constant="10" id="VUb-E9-5pP"/>
                             <constraint firstAttribute="bottom" secondItem="Aln-Bs-Vfk" secondAttribute="bottom" constant="34" id="X5M-ro-ASg"/>
                             <constraint firstItem="IcC-T5-erp" firstAttribute="bottom" secondItem="Aln-Bs-Vfk" secondAttribute="bottom" id="XND-F3-1pn"/>
+                            <constraint firstItem="n89-cb-ZTW" firstAttribute="centerX" secondItem="06T-Zi-1jq" secondAttribute="centerX" id="abV-Sx-475"/>
                             <constraint firstItem="KTM-ct-s5P" firstAttribute="leading" secondItem="IcC-T5-erp" secondAttribute="leading" constant="10" id="j01-zX-jkc"/>
                         </constraints>
                     </view>
@@ -275,6 +290,7 @@ por 2 segundos</string>
                     <connections>
                         <outlet property="lbAddress" destination="UYS-Ch-euG" id="4eI-ln-wy1"/>
                         <outlet property="lbName" destination="ZUC-aP-VdP" id="SHW-qQ-w6D"/>
+                        <outlet property="loading" destination="n89-cb-ZTW" id="Cwo-QL-FpW"/>
                         <outlet property="mapView" destination="06T-Zi-1jq" id="1uL-yL-gVo"/>
                         <outlet property="searchBar" destination="Ixx-cd-Ab6" id="kH4-aM-klU"/>
                         <outlet property="viInfo" destination="Vj7-E8-Hak" id="V3j-ZN-VGP"/>
